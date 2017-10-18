@@ -1,7 +1,7 @@
 # Elm
 ## En introduksjon
 #### Morten Nygaard Åsnes
-![Logo](Elm_logo.svg.png)
+
 ---
 
 ### Hva er Elm
@@ -144,8 +144,7 @@ sum cards =
   foldl (+) 0 (map (\c -> value c) cards)
 ```
 ---
-### The Elm Architecture
-![Logo](elm-architecture-overview-diagram.svg)
+---?image=handling-user-input_01.png&size=auto 90%
 ---
 Topics:
 - Hva er elm
