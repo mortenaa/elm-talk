@@ -56,8 +56,7 @@ fibonacci n =
   else
    fibonacci (n - 1) + fibonacci (n - 2)
 ```
-@[1]
-@[2-4]
+@[1-4]
 @[1-2,5-6]
 @[1-2,7-8]
 ---
@@ -90,7 +89,53 @@ toString card =
 @[1-4]
 @[6-8]
 ---
+## Union Types
+```elm
+type Suit = Clubs | Diamonds | Hearths | Spades
 
+type Rank = Face Name | Value Int
+type Name = Ace | Jack | Queen | King
+
+type alias Card =
+  { suit : Suit
+  , rank : Rank
+  }
+```
+@[1]
+@[3-4]
+@[6-9]
+---
+## Handling Union Types
+```elm
+print : Card -> String
+print card =
+  case card.rank of
+    Value value ->
+      toString value ++ " of " ++ toString card.suit
+
+    Face name ->
+      toString name ++ " of " ++ toString card.suit
+```
+@[1-5]
+@[1-2,7-8]
+---
+## Handling Union Types
+```elm
+value : Card -> Int
+value card =
+  case card.rank of
+    Value value ->
+      value
+
+    Face name ->
+      case name of
+        Ace -> 1
+        Jack -> 11
+        Queen -> 12
+        King -> 13
+```
+@[1-5]
+@[1-2,7-12]
 ---
 Topics:
 - Hva er elm
