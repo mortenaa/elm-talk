@@ -1,10 +1,10 @@
 # Elm
 ## En introduksjon
 #### Morten Nygaard Åsnes
-
+![Logo](Elm_logo.svg.png)
 ---
 
-## Hva er Elm
+### Hva er Elm
 - Kompilert til JavaScript
 - Funksjonelt
 - Statisk typet
@@ -20,7 +20,7 @@ Shadow Dom
 
 ---
 
-## Hvorfor Elm
+### Hvorfor Elm
 - Sikkert
 - Stabilit
 - Refaktorering
@@ -35,7 +35,7 @@ Elm kompilatoren gjør kjøretidsfeil om til kompileringsfeil
 
 ---
 
-## Funksjoner
+### Funksjoner
 ```elm
 sayHello : String -> String
 sayHello name =
@@ -45,7 +45,7 @@ sayHello name =
 @[1]
 
 ---
-## Rekursive Funksjoner
+### Rekursive Funksjoner
 ```elm
 fibonacci : Int -> Int
 fibonacci n =
@@ -60,7 +60,7 @@ fibonacci n =
 @[1-2,5-6]
 @[1-2,7-8]
 ---
-## Records
+### Records
 ```elm
 card =
   { suit = "Spades"
@@ -75,7 +75,7 @@ toString card =
 @[6-8]
 
 ---
-## Type Alias
+### Type Alias
 ```elm
 type alias Card =
   { suit : String
@@ -89,7 +89,7 @@ toString card =
 @[1-4]
 @[6-8]
 ---
-## Union Types
+### Union Types
 ```elm
 type Suit = Clubs | Diamonds | Hearths | Spades
 
@@ -105,7 +105,7 @@ type alias Card =
 @[3-4]
 @[6-9]
 ---
-## Handling Union Types
+### Handling Union Types
 ```elm
 print : Card -> String
 print card =
@@ -119,7 +119,7 @@ print card =
 @[1-5]
 @[1-2,7-8]
 ---
-## Handling Union Types
+### Handling Union Types
 ```elm
 value : Card -> Int
 value card =
@@ -136,6 +136,16 @@ value card =
 ```
 @[1-5]
 @[1-2,7-12]
+---
+### Higher Order functions
+```elm
+sum : List Card -> Int
+sum cards =
+  foldl (+) 0 (map (\c -> value c) cards)
+```
+---
+### The Elm Architecture
+![Logo](elm-architecture-overview-diagram.svg)
 ---
 Topics:
 - Hva er elm
