@@ -144,7 +144,10 @@ sum cards =
   foldl (+) 0 (map (\c -> value c) cards)
 ```
 ---
----?image=handling-user-input_01.png&size=auto 90%
+---?image=handling-user-input_01.png&size=auto 60%
+---
+[Ellie](https://ellie-app.com/3wwM4XmnBa1/0)
+
 ---
 Topics:
 - Hva er elm
