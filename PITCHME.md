@@ -37,15 +37,61 @@ Elm kompilatoren gjør kjøretidsfeil om til kompileringsfeil
 
 ## Funksjoner
 ```elm
-sayHello String -> String
+sayHello : String -> String
 sayHello name =
-	"hello " ++ name
+  "Hello, " ++ name ++ "!"
 ```
-@[2-3](function body)
-@[1](type signature)
+@[2-3]
+@[1]
 
 ---
+## Rekursive Funksjoner
+```elm
+fibonacci : Int -> Int
+fibonacci n =
+  if n == 0 then
+    0
+  else if n == 1 then
+    1
+  else
+   fibonacci (n - 1) + fibonacci (n - 2)
+```
+@[1]
+@[2-4]
+@[1-2,5-6]
+@[1-2,7-8]
+---
+## Records
+```elm
+card =
+  { suit = "Spades"
+  , rank = "Ace"
+  }
 
+toString : { suit : String, rank : String } -> String
+toString card =
+  card.rank ++ " of " ++ card.suit
+```
+@[1-4]
+@[6-8]
+
+---
+## Type Alias
+```elm
+type alias Card =
+  { suit : String
+  , rank : String
+  }
+
+toString : Card -> String
+toString card =
+  card.rank ++ " of " ++ card.suit
+```
+@[1-4]
+@[6-8]
+---
+
+---
 Topics:
 - Hva er elm
 	- Statisk typet
@@ -82,3 +128,5 @@ type alias Card =
   , value : Int
   }
 ```
+https://ellie-app.com/3wwM4XmnBa1/0
+https://ellie-app.com/3wwM4XmnBa1/1
